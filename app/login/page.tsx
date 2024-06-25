@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { SubmitButton } from "./submit-button";
+import { revalidatePath } from "next/cache";
 
 export default function Login({
   searchParams,
@@ -25,7 +26,8 @@ export default function Login({
       return redirect("/login?message=Could not authenticate user");
     }
 
-    return redirect("/protected");
+    revalidatePath("/");
+    return redirect("/");
   };
 
   const signUp = async (formData: FormData) => {
@@ -34,12 +36,16 @@ export default function Login({
     const origin = headers().get("origin");
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
+    const fullname = formData.get("fullname") as string; 
     const supabase = createClient();
 
-    const { error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
+        data: {
+          full_name: fullname,  // Ensure fullname is passed to the data object
+        },
         emailRedirectTo: `${origin}/auth/callback`,
       },
     });
@@ -82,6 +88,15 @@ export default function Login({
           className="rounded-md px-4 py-2 bg-inherit border mb-6"
           name="email"
           placeholder="you@example.com"
+          required
+        />
+        <label className="text-md" htmlFor="fullname">
+          Full name
+        </label>
+        <input
+          className="rounded-md px-4 py-2 bg-inherit border mb-6"
+          name="fullname"
+          placeholder="John Doe"
           required
         />
         <label className="text-md" htmlFor="password">
