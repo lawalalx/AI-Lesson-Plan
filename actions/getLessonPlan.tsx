@@ -15,6 +15,7 @@ export const getLessonPlan = async (formData: FormData) => {
     throw new Error('Form data is required.');
   }
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   const lessonNote = await prisma.alxuser.create({
     data: {
       gradeLevel,
