@@ -15,6 +15,10 @@ export const getLessonPlan = async (formData: FormData) => {
     throw new Error('Form data is required.');
   }
 
+  if (!gradeLevel || !topic || !criteria || !standards || !language) {
+    throw new Error('All fields are required.');
+  }
+
   const lessonNote = await prisma.alxuser.create({
     data: {
       gradeLevel,

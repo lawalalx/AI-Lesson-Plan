@@ -2,6 +2,7 @@
 
 import React, { useEffect } from 'react';
 import axios from 'axios';
+import { Circles } from 'react-loader-spinner'
 
 
 const page =  () => {
@@ -36,10 +37,24 @@ const page =  () => {
       {lessonNote && (
         <div className='w-max md:max-w-[750px] p-4'>
           <h2 className='font-semibold text-2xl'>Lesson Plan</h2>
-          {
-            lessonNote && <div dangerouslySetInnerHTML={{ __html: lessonNote }} />
+          {Object.keys(lessonNote).length === 0 ? 
+            (
+              <div className='flex items-center justify-center h-screen'>
+                <Circles
+                  height="80"
+                  width="80"
+                  color="#4fa94d"
+                  ariaLabel="circles-loading"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                  visible={true}
+                />
+              </div>
+            ) : 
+            (
+              <div dangerouslySetInnerHTML={{ __html: lessonNote }} />
+            )
           }
-          
         </div>
       )}
     </div>
