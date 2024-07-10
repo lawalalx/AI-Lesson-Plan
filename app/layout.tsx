@@ -9,7 +9,7 @@ const defaultUrl = process.env.VERCEL_URL
 export const metadata = {
   metadataBase: new URL(defaultUrl),
   title: "AI Personalise Learning",
-  description: "The great wat to personalise your learning materials",
+  description: "The great way to personalise your learning materials",
 };
 
 export default function RootLayout({
