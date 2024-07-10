@@ -1,8 +1,4 @@
-import DeployButton from "../components/Logo";
-import AuthButton from "../components/Menubar";
-// import { createClient } from "@/utils/supabase/server";
 import Hero from "@/components/Hero";
-import Navbar from "@/components/Navbar";
 
 export default async function Index() {
 

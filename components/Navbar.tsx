@@ -1,5 +1,4 @@
 import React from 'react';
-import { createClient } from "@/utils/supabase/server";
 import LogoButton from './Logo';
 import AuthButton from './Menubar';
 import Link from 'next/link';

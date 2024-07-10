@@ -1,7 +1,5 @@
 // import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
-import { redirect } from "next/navigation";
-import SignOut from "@/actions/SignOut"
 
 export default async function MenuButtons() {
 
