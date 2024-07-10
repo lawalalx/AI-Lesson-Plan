@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "components/Hero.jsx", "components/Logo.jsx", "actions/getLessonPlan.jsx"  ],
+, "components/Hero.jsx", "components/Logo.jsx", "actions/getLessonPlan.tsx"  ],
   "exclude": [
     "node_modules"
   ]

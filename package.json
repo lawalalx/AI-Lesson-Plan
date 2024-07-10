@@ -6,9 +6,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "@langchain/core": "^0.2.15",
+    "@langchain/openai": "^0.2.1",
+    "@prisma/client": "^5.16.2",
     "@supabase/ssr": "^0.3.0",
     "@supabase/supabase-js": "latest",
     "autoprefixer": "10.4.17",
+    "axios": "^1.7.2",
     "geist": "^1.2.1",
     "next": "latest",
     "postcss": "8.4.33",
@@ -22,6 +26,7 @@
     "@types/react": "18.2.48",
     "@types/react-dom": "18.2.18",
     "@types/ws": "^8.5.10",
-    "encoding": "^0.1.13"
+    "encoding": "^0.1.13",
+    "prisma": "^5.16.2"
   }
 }
