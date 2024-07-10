@@ -35,7 +35,7 @@ const page =  () => {
   return (
     <div>
       {lessonNote && (
-        <div className='w-max md:max-w-[750px] p-4'>
+        <div className='w-[400px] md:w-max md:max-w-[750px] p-4'>
           <h2 className='font-semibold text-2xl'>Lesson Plan</h2>
           {Object.keys(lessonNote).length === 0 ? 
             (
