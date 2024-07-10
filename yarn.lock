@@ -71,7 +71,7 @@
 
 "@langchain/openai@^0.2.1":
   version "0.2.1"
-  resolved "https://registry.npmjs.org/@langchain/openai/-/openai-0.2.1.tgz"
+  resolved "https://registry.yarnpkg.com/@langchain/openai/-/openai-0.2.1.tgz#2c0c2cb6bd7839d8ce342c97099c6e35f2dde40d"
   integrity sha512-Ti3C6ZIUPaueIPAfMljMnLu3GSGNq5KmrlHeWkIbrLShOBlzj4xj7mRfR73oWgAC0qivfxdkfbB0e+WCY+oRJw==
   dependencies:
     "@langchain/core" ">=0.2.8 <0.3.0"
