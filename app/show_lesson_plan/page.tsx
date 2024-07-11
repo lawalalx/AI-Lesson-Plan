@@ -12,7 +12,7 @@ const page =  () => {
   useEffect(() => {
     const fetchLessonNote = async () => {
       try {
-        const result = await fetch("/api/getLessonNote", {next: { revalidate: 0.5 }} );
+        const result = await fetch("/api/getLessonNote", { cache: 'no-store' });
 
         const data = await result.json();
 
