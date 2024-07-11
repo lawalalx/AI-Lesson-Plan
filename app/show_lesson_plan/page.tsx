@@ -28,7 +28,9 @@ const page =  () => {
       }
       
     };
+   
     fetchLessonNote();
+    revalidatePath('/')
   }, []); 
 
 
