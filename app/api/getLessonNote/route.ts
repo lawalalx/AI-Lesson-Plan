@@ -5,7 +5,8 @@ import { lesssonPlanPrompt } from '@/prompts/lesssonPlanPrompt';
 import { ChatOpenAI } from '@langchain/openai';
 import { RunnableSequence } from '@langchain/core/runnables';
 import { StringOutputParser } from '@langchain/core/output_parsers';
-
+import { revalidatePath } from 'next/cache'
+ 
 export async function GET(req: NextRequest) {
   try {
     if (req.method !== 'GET') {
@@ -63,6 +64,7 @@ export async function GET(req: NextRequest) {
       language,
     });
 
+    revalidatePath('/', 'layout')
     return NextResponse.json(response, { status: 200 });
   } catch (error) {
     console.error(error);
