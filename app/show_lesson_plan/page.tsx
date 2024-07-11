@@ -2,7 +2,8 @@
 
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import { Circles } from 'react-loader-spinner'
+import { Circles } from 'react-loader-spinner';
+import { revalidatePath } from 'next/cache;
 
 
 const page =  () => {
@@ -28,11 +29,10 @@ const page =  () => {
       }
       
     };
-   
     fetchLessonNote();
-    revalidatePath('/')
   }, []); 
 
+  revalidatePath('/show_lesson_plan');
 
   return (
     <div>
