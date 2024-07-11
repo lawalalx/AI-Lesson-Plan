@@ -63,7 +63,7 @@ export async function GET(req: NextRequest) {
       language,
     });
 
-    return NextResponse.json(response, { status: 200 });
+    return NextResponse.json(response, { status: 200 }, { revalidated: true, now: Date.now() });
   } catch (error) {
     console.error(error);
     return NextResponse.json({ error: error }, { status: 500 });
