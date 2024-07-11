@@ -12,11 +12,15 @@ const page =  () => {
   useEffect(() => {
     const fetchLessonNote = async () => {
       try {
-        const result = await axios.get("/api/getLessonNote");
+        const result = await fetch("/api/getLessonNote",
+                                       next: {
+                                          revalidate: 0.5,
+                                     },
+                                  );
 
-        console.log(result.data);
+        const data = await result.json();
 
-        const formattedResponse = result.data
+        const formattedResponse = data
         .replace(/\*\*/g, "")
         .replace(/\n/g, "<br>");
       
